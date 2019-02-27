@@ -24,7 +24,7 @@ void mult(char a[], char b[], char ans[])
 	for(int i=alen-1; i>=0; i--)  //只求了alen位的低位结果，还有blen-1位没计算
 	{
 		for(int j=blen-1; j>=0; j--)    
-			sum += res[i+(blen-1)-j][j];  //向左下方求和
+			sum += res[i+(blen-1)-j][j];  //向左下方求和   i+(blen-1)-j 的原因是 左手方向斜切线上点的横、纵坐标和是一样的
 
 		result[k]=sum%10;
 		k++;    //进一位
@@ -33,7 +33,7 @@ void mult(char a[], char b[], char ans[])
 	for(int i=(blen-1)-1; i>=0; i--)  //计算blen-1位高位结果
 	{
 		for(int j=0; j<=i; j++)
-			sum += res[i-j][j];  //向右上方求和
+			sum += res[i+0-j][j];  //向右上方求和   i+0-j 的原因是 左手方向斜切线上点的横、纵坐标和是一样的
 		result[k]=sum%10;
 		k++;
 		sum = sum/10;
