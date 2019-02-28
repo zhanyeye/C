@@ -39,7 +39,7 @@ bool is_vaild2(long long n) {
 int main() {
  for (int i = 102345; i <= 987654; i++) {
         if (is_vaild(i)) {
-            long long k = i;
+            long long k = i; //注意2个int相乘，还是结果int,会溢出
             long long tmp = k * k;
            
             if (is_vaild2(tmp)) {

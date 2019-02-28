@@ -1,12 +1,12 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <algorithm>
+#include <map>
 using namespace std;
-typedef long long LL;
-const int INF = 0x3f3f3f3f;
-const LL mod = 1e9 + 7;
-const int N = 100005;
-string a[N];
+
+string a[100005];
+map<string, int> mp;
+
 int main() {
-    map<string, int> mp;
     int n;
     cin >> n;
     for (int i = 0; i < n; i++) {
@@ -18,5 +18,4 @@ int main() {
     for (int i = 0; i < n; i++) {
         cout << mp[a[i]] << endl;
     }
-    return 0;
 }
